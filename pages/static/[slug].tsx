@@ -1,8 +1,9 @@
 import {Post} from "../../data/Post";
 import styles from "../../styles/Static.module.css"
 import {GetStaticProps} from "next";
-import {StaticSubredditsName, staticSubredditsName, subRedditRecords} from "../../data/subReddit";
+import {StaticSubredditsName, staticSubredditsName, subRedditRecords} from "../../data/SubReddit";
 import {getSubRedditPost} from "../../effect/reddit-api";
+import PostRow from "../../components/Post";
 
 
 export type StaticSubRedditProps = {
@@ -11,16 +12,19 @@ export type StaticSubRedditProps = {
 }
 export const StaticSubRedditPage = ({title, posts} : StaticSubRedditProps) => {
     return (
-        <div className={styles.list}>
-            {posts.map(p => {
-                return (
-                    <div className={styles.postRow}>
-                        {p.title}
-                    </div>
-                )
-                })
-            }
-        </div>
+        <>
+            <header className={styles.subRedditHeader}>
+                <h2> /r/{ title } </h2>
+            </header>
+            <div className={styles.list}>
+                {posts.map(p => {
+                    return (
+                        <PostRow key={p.title} post={p}></PostRow>
+                    )
+                    })
+                }
+            </div>
+        </>
     )
 
 }
@@ -28,7 +32,7 @@ export const StaticSubRedditPage = ({title, posts} : StaticSubRedditProps) => {
 export const getStaticProps : GetStaticProps = async (ctx) => {
     const slug = ctx.params?.slug as StaticSubredditsName
 
-    const posts = await getSubRedditPost(slug, 5)
+    const posts = await getSubRedditPost(slug,)
 
     return { props: { posts, title : subRedditRecords[slug].displayName } }
 

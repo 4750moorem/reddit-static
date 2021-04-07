@@ -1,9 +1,8 @@
 import Head from 'next/head'
 import Link from 'next/link'
 import styles from '../styles/Home.module.css'
-import {subRedditRecords} from "../data/subReddit";
-import {useEffect} from "react";
-import {getSubRedditPost} from "../effect/reddit-api";
+import {subRedditRecords} from "../data/SubReddit";
+
 
 export default function Home() {
 
@@ -31,34 +30,33 @@ export default function Home() {
             </a>
           </Link>
 
-          <a href="https://nextjs.org/learn" className={styles.card}>
-            <h3>Learn &rarr;</h3>
-            <p>Learn about Next.js in an interactive course with quizzes!</p>
-          </a>
+          <Link href={`/static/${subRedditRecords.webdev.slug}`} passHref>
+            <a href="/" className={styles.card}>
+              <h3>{subRedditRecords.webdev.displayName} &rarr;</h3>
+              <p></p>
+            </a>
+          </Link>
 
-          <a
-            href="https://github.com/vercel/next.js/tree/master/examples"
-            className={styles.card}
-          >
-            <h3>Examples &rarr;</h3>
-            <p>Discover and deploy boilerplate example Next.js projects.</p>
-          </a>
+          <Link href={`/static/${subRedditRecords.Frontend.slug}`} passHref>
+            <a href="/" className={styles.card}>
+              <h3>{subRedditRecords.Frontend.displayName} &rarr;</h3>
+              <p></p>
+            </a>
+          </Link>
 
-          <a
-            href="https://vercel.com/new?utm_source=create-next-app&utm_medium=default-template&utm_campaign=create-next-app"
-            className={styles.card}
-          >
-            <h3>Deploy &rarr;</h3>
-            <p>
-              Instantly deploy your Next.js site to a public URL with Vercel.
-            </p>
-          </a>
+          <Link href={`/static/${subRedditRecords.Kotlin.slug}`} passHref>
+            <a href="/" className={styles.card}>
+              <h3>{subRedditRecords.Kotlin.displayName} &rarr;</h3>
+              <p></p>
+            </a>
+          </Link>
         </div>
+
       </main>
 
       <footer className={styles.footer}>
         <a
-          href="https://vercel.com?utm_source=create-next-app&utm_medium=default-template&utm_campaign=create-next-app"
+          href="Href"
           target="_blank"
           rel="noopener noreferrer"
         >

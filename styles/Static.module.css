@@ -4,11 +4,20 @@
     align-content: center;
     justify-content: flex-start;
 }
+.list div:nth-child(2n) {
+    background-color: #f3f3f3;
+}
+.subRedditHeader {
+    padding: 2em 1em;
+    color: #419eea;
+    box-shadow: 0px 3px 6px rgba(0,0,0,.2);
+}
 
-.postRow {
+.postRow{
     display: flex;
     flex-direction: row;
     justify-content: flex-start;
+    padding: 1.5em 1em;
 }
 
 

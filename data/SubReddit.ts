@@ -10,7 +10,7 @@ export type SubRedditRecord = Record<StaticSubredditsName, subRedditObj>
 
 export const subRedditRecords : SubRedditRecord = {
     "programminghumor"  : {displayName : "Programming Humor", slug: "programminghumor" },
-    "webdev"            : {displayName : "Programming Humor", slug: "webdev" },
-    "Frontend"          : {displayName : "Programming Humor", slug: "Frontend" },
-    "Kotlin"            : {displayName : "Programming Humor", slug: "Kotlin" }
+    "webdev"            : {displayName : "Web Dev", slug: "webdev" },
+    "Frontend"          : {displayName : "Front End", slug: "Frontend" },
+    "Kotlin"            : {displayName : "Kotlin", slug: "Kotlin" }
 }
